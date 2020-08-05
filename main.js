@@ -61,6 +61,9 @@ buttons.forEach(btn => {
     node.setAttribute("id", btn.id);
     if (btn.class) {
         node.classList.add(btn.class);
+        if (btn.class == "number") {
+            node.addEventListener('click', updateDisplay);
+        }
     }
     node.classList.add("btn");
     node.innerHTML = btn.content
@@ -86,3 +89,18 @@ let divide = (x, y) => {
 let operate = (op, x, y) => {
     return op(x,y);
 };
+
+function updateDisplay(){
+    let display = document.getElementById("display");
+    display.innerHTML += this.innerHTML;
+    display_value = display.innerHTML;
+}
+/**
+ * TODO:
+ *  - add decimal checking
+ *  - add javascript to buttons
+ *  - add number selection storage
+ *  - make it look good
+ *  - add back space
+ *  - add keyboard support
+ */

@@ -1,17 +1,20 @@
+body{
+    background-color: lightskyblue;
+}
 .container{
     display: grid;
     grid-template: 100vh / 100vw;
 }
 .calculator{
+    display: grid;
     background-color: lightgoldenrodyellow;
     height: 500px;
     width: 300px;
     justify-self: center;
     align-self: center;
     padding: 10px;
-    border: 1px solid;
     border-radius: 2%;
-    box-shadow: 2px 5px #888888;
+    box-shadow: 5px 5px #888888;
 }
 .display{
     display: grid;
@@ -21,9 +24,8 @@
     padding-right: 10px;
     background-color: white;
     height: 55px;
-    border: 1px solid;
     border-radius: 3%;
-    box-shadow: 2px 5px #888888;
+    box-shadow: 5px 5px #888888;
 }
 .buttons{
     display: grid;
@@ -46,22 +48,27 @@
     grid-row: 5;
 }
 .btn{
-    background-color: lightpink;
+    background-color: hsl(351, 100%, 86%);
     border: none;
     color: white;
     padding: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
-    border: 1px solid;
     border-radius: 10%;
-    box-shadow: 2px 5px #888888;
+    box-shadow: 5px 5px #888888;
+}
+.btn:hover{
+    background-color: hsl(352, 100%, 70%);
+}
+.btn:active{
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px #444;
 }
 .footer{
-    padding-left: 150px;
-    white-space: nowrap;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
