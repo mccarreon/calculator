@@ -102,15 +102,22 @@ let divide = (x, y) => {
 
 function operate () {
     if (operator == '+') {
-        display.innerHTML = add(first_number, display_value);
+        result = add(first_number, display_value);
     } else if (operator == '-') {
-        display.innerHTML = subtract(first_number, display_value);
+        result = subtract(first_number, display_value);
     } else if (operator == '-') {
-        display.innerHTML = subtract(first_number, display_value);
+        result = subtract(first_number, display_value);
     } else if (operator == '×') {
-        display.innerHTML = multiply(first_number, display_value);
+        result = multiply(first_number, display_value);
     } else if (operator == '÷') {
-        display.innerHTML = divide(first_number, display_value);
+        result = divide(first_number, display_value);
+    }
+    if (result % 1 != 0){
+        display.innerHTML = result.toFixed(2);
+        display_value = result.toFixed(2);
+    } else {
+        display.innerHTML = result
+        display_value = result
     }
 };
 
@@ -135,6 +142,8 @@ function updateDisplay(){
 }
 
 function clearDisplay(){
+    first_value = 0;
+    operator = '';
     display.innerHTML = '0';
 }
 
@@ -151,6 +160,9 @@ function backspace(){
 }
 
 function selectOperator(){
+    if (operator) {
+        operate();
+    }
     operator = this.innerHTML;
     first_number = display_value;
     display.innerHTML = '0';
